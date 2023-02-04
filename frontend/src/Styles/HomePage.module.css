@@ -89,3 +89,42 @@
     height: 100%;
     width: 100%;
 }
+.solutionboxtext{
+    color: #0D0C22;
+    font-size: 20px;
+    font-weight: bolder;
+   
+}
+.manage{
+    height: 22rem;
+    width: auto;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding-left: 2rem;
+    /* justify-content: center;
+    align-items: center; */
+}
+.managebox{
+    color: #0D0C22;
+    font-weight: 500;
+    font-size: 14px;
+    height: 10rem;
+    width: 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+padding-top: 3rem;
+}
+.apitext
+{
+    color: #0D0C22;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.apitexts{
+    color: #6E6D7A;
+    font-size: 10px;
+    font-weight: bolder;
+}
