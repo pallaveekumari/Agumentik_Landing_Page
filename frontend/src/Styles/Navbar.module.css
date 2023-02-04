@@ -1,0 +1,58 @@
+.smallNav{
+    
+    width:"100%";
+    border: 1px solid red;
+    background-color: #0D0C22;
+    color: aliceblue;
+display: flex;
+justify-content: space-around;
+height: 3rem;
+align-items: center;
+
+
+}
+
+.navBox{
+    height: 5rem;
+    width:"100%";
+    border: 0.5px solid#6E6D7A;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+
+}
+.dribble{
+    height: auto;
+    width: 130px;
+    color: #0D0C22;
+    font-size: 20px;
+    font-weight: 500;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Inspiration{
+    height: auto;
+    width: 40rem;
+    color: #6E6D7A;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid green; */
+    font-weight: 500;
+}
+
+.search{
+    height: auto;
+    width: 17rem;
+    /* border: 4px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #6E6D7A;
+    font-size: 17px;
+    font-weight: 500;
+}
