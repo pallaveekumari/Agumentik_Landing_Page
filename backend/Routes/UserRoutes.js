@@ -5,6 +5,19 @@ const { UserModel } = require("../Models/UserModel");
 
 const userController = Router();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 userController.post("/signup", async (req, res) => {
   try {
     const new_user = new UserModel(req.body);
