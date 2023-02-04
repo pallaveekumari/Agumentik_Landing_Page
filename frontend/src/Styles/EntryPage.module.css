@@ -11,7 +11,7 @@
 }
 .admin{
     height: 15rem;
-    width: 30%;
+    width: 100%;
     /* border: 5px solid #0D0C22; */
     border-radius: 50%;
     font-size: 25px;
@@ -19,7 +19,7 @@
 .user{
  
         height: 15rem;
-        width: 25%;
+        width: 100%;
         /* border: 5px solid #0D0C22; */
         border-radius: 50%;
         font-size: 25px;
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .userimg{
     height: 10rem;
     width: 10rem;

@@ -6,9 +6,9 @@ import EntryPage from './EntryPage/EntryPage';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar/>
-      <h1>hello world</h1> */}
-      <EntryPage/>
+       <Navbar/>
+      {/* <h1>hello world</h1>  */}
+      {/* <EntryPage/> */}
          </div>
   );
 }
