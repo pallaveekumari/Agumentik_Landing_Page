@@ -1,8 +1,16 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Navbar from "../Components/Navbar";
+import AppContext from "../Context/AppContext";
 import styles from "../Styles/HomePage.module.css";
 const HomePage = () => {
+
+const {getcontents,contents}=useContext(AppContext)
+
+
+    useEffect(()=>{
+getcontents()
+    },[])
   return (
     <Box>
       <Navbar />
@@ -31,7 +39,8 @@ const HomePage = () => {
       <Box className={styles.sekret}>
         <Image
           className={styles.sekretimg}
-          src="https://cdn.dribbble.com/userupload/3288518/file/original-e5dab85d72f26abb6625f13eab805d1e.png?compress=1&resize=1024x768"
+        //   src="https://cdn.dribbble.com/userupload/3288518/file/original-e5dab85d72f26abb6625f13eab805d1e.png?compress=1&resize=1024x768"
+        src={contents.firstImage}
         />
       </Box>
 
@@ -42,7 +51,7 @@ const HomePage = () => {
         ping Us here:
       </Box>
       <Box className={styles.new}>
-        <Text>We are available for crafting new projects-</Text>
+        <Text>{contents.weare_content}</Text>
 
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 

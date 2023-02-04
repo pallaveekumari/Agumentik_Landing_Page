@@ -199,6 +199,7 @@ padding-top: 3rem;
     height: auto;
     width: 30%;
     border: 1px solid red;
+    text-align: center;
 }
 .readtext{
     color: #0D0C22;
