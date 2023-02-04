@@ -1,0 +1,37 @@
+.container{
+    height: 20rem;
+    width: 50%;
+    border: 10px solid teal;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10rem;
+}
+.admin{
+    height: 15rem;
+    width: 30%;
+    /* border: 5px solid #0D0C22; */
+    border-radius: 50%;
+    font-size: 25px;
+}
+.user{
+ 
+        height: 15rem;
+        width: 25%;
+        /* border: 5px solid #0D0C22; */
+        border-radius: 50%;
+        font-size: 25px;
+    
+}
+.userimgbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userimg{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10px;
+}
