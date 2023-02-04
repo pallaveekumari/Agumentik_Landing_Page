@@ -19,14 +19,19 @@ const userController = Router();
 
 
 userController.post("/signup", async (req, res) => {
+
+const{name,email,password} = req.body;
+
   try {
-    const new_user = new UserModel(req.body);
+    
+    const new_user = new UserModel({email,name,password,role:'user'});
     await new_user.save();
     res.status(200).json({ msg: "SignUp Successfull" });
   } catch (err) {
     res.status(400).json({ msg: "SignUp Failed" });
   }
 });
+
 
 userController.post("/login", async (req, res) => {
   const { email, password } = req.body;
