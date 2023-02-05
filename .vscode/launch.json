@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://localhost:2000/content/update",
+            "request": "launch",
+            "url": "http://localhost:2000/content/update"
+        }
+    ]
+}

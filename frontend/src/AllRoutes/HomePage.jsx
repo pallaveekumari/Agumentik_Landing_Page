@@ -1,16 +1,14 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import {AppContext} from "../Context/AppContext";
+import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/HomePage.module.css";
 const HomePage = () => {
+  const { getcontents, contents } = useContext(AppContext);
 
- const {getcontents,contents}=useContext(AppContext)
-
-
-    useEffect(()=>{
-        getcontents()
-    },[])
+  useEffect(() => {
+    getcontents();
+  }, []);
   return (
     <Box>
       <Navbar />
@@ -40,16 +38,11 @@ const HomePage = () => {
         <Image
           className={styles.sekretimg}
           // src="https://cdn.dribbble.com/userupload/3288518/file/original-e5dab85d72f26abb6625f13eab805d1e.png?compress=1&resize=1024x768"
-        src={contents.firstImage}
+          src={contents.firstImage}
         />
       </Box>
 
-      <Box className={styles.heytextbox}>
-        Hey Guys, Here is the " API Platform Landing page " the product help to
-        arrange your APIS , I enjoy a lot to do this Work . Let me know your
-        feedback & press the "L" button. If you have any UI/UX related project
-        ping Us here:
-      </Box>
+      <Box className={styles.heytextbox}>{contents.heyguys_content}</Box>
       <Box className={styles.new}>
         <Text>{contents.weare_content}</Text>
 
@@ -62,23 +55,19 @@ const HomePage = () => {
       </Box>
 
       <Box className={styles.mission}>
-        <Image
-          className={styles.missionimg}
-          src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
-        />
+        <Image className={styles.missionimg} src={contents.secondImage} />
       </Box>
 
       <Box className={styles.solution}>
         <Box className={styles.solutionbox}>
           <Image
             className={styles.solutionboximg}
-            src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"
+            src={contents.solutionImage}
           />
         </Box>
         <Box className={styles.solutionbox}>
           <Box className={styles.solutionboxtext}>
-            In this solution brief,we share how Seekret is trackling API
-            management and how your R&D teams can:
+            {contents.solution_content}
           </Box>
 
           <Box className={styles.manage}>
@@ -106,12 +95,10 @@ const HomePage = () => {
 
       <Box className={styles.api}>
         <Text className={styles.apitext}>
-          API development today takes place in the dark
+          {contents.apiDevelopment_content}
         </Text>
         <Box className={styles.apitexts}>
-          As the API first approach to modern software continues to again
-          popularity and momantum developers worldwide struggle to understand
-          the impact of an API change on application behaviour
+          {contents.apiApproach_content}
         </Box>
       </Box>
 
@@ -163,41 +150,84 @@ const HomePage = () => {
           breaking changes and improves enginerring velocity with context and
           automation to the Api development lifecycle
         </Box>
-       
       </Box>
 
       <Box className={styles.readabilitybox}>
         <Box className={styles.subreadabilitybox}>
-        <Box className={styles.bulbicon} ><i class="fa-regular fa-lightbulb"></i></Box>
-       <Text className={styles.readtext}>Readability</Text> 
-        </Box>
-    
-       <Box className={styles.subreadabilitybox}>
-        <Box className={styles.bulbicon} ><i class="fa-regular fa-lightbulb"></i></Box>
-       <Text className={styles.readtext}>Consistency</Text> 
-        </Box>
-     
-      <Box className={styles.subreadabilitybox}>
-        <Box className={styles.bulbicon} ><i class="fa-solid fa-tv"></i></Box>
-       <Text className={styles.readtext}>Velocity</Text> 
+          <Box className={styles.bulbicon}>
+            <i class="fa-regular fa-lightbulb"></i>
+          </Box>
+          <Text className={styles.readtext}>Readability</Text>
         </Box>
 
+        <Box className={styles.subreadabilitybox}>
+          <Box className={styles.bulbicon}>
+            <i class="fa-regular fa-lightbulb"></i>
+          </Box>
+          <Text className={styles.readtext}>Consistency</Text>
+        </Box>
+
+        <Box className={styles.subreadabilitybox}>
+          <Box className={styles.bulbicon}>
+            <i class="fa-solid fa-tv"></i>
+          </Box>
+          <Text className={styles.readtext}>Velocity</Text>
+        </Box>
+      </Box>
+
+      <Box className={styles.platformdiv}>
+        <Box className={styles.platformdivone}>
+          <Box className={styles.platformtext}>
+            The Seekret API Observability Platform
+          </Box>
+          <Box className={styles.platformtexts}>
+            The ultimate foundation for managibg and maintaining APIs as they
+            advance through the SDLC and beyond.
+          </Box>
+          <Box className={styles.float}>
+            <Box className={styles.floatdiv}>Iterate 5xFaster</Box>
+            <Box className={styles.floatdiv}>3x Better Coverage</Box>
+            <Box className={styles.floatdiv}>100% Capability</Box>
+          </Box>
+        </Box>
+        <Box className={styles.platformdivtwo}>
+          <Image
+            className={styles.platformdivimg}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ321t1wnnGxFRAndUoNV5JwpPqyyg3s9p60w&usqp=CAU"
+          />
+        </Box>
+      </Box>
+
+      <Box className={styles.contactcontainer}>
+        <Text className={styles.contacttext}>Contact With Us</Text>
+        <Box className={styles.contactmaindiv}>
+          <Box className={styles.contactimg}>
+            <Image
+              className={styles.contactimges}
+              src="https://assets-global.website-files.com/60e615980cab093e6f2db3c3/60f1c779e1930d77c301c343_Screen_Shot_2019-09-29_at_10.35.46_AM.png"
+            />
+          </Box>
+          <Box className={styles.contactlogo}>
+            <Image
+              className={styles.contactlogoimg}
+              src="https://guitarzone.in/wp-content/uploads/2015/11/contact_us.png"
+            />
+          </Box>
+        </Box>
       </Box>
 
 
-<Box className={styles.platformdiv}>
-<Box className={styles.platformdivone}>
 
-</Box>
-<Box className={styles.platformdivtwo}>
-
-</Box>
-
-</Box>
-
-
-
-
+      <Box className={styles.socialbox}>
+           <Image src="https://image.pitchbook.com/MHscGLdx0QAerX1Swj8EYpe9a5g1629461864512_200x200"/>
+      <Box className={styles.iconbox}>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      </Box>
+      
+      </Box>
     </Box>
   );
 };

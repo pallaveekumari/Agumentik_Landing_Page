@@ -31,6 +31,7 @@
     /* border: 1px solid red; */
     margin: auto;
     margin-top: 2rem;
+    position: relative;
 }
 .sekretimg{
     height: 100%;
@@ -188,7 +189,7 @@ padding-top: 3rem;
 .readabilitybox{
     width: 55%;
     margin: auto;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     height: 8rem;
     margin-top: 1rem;
     display: flex;
@@ -198,7 +199,7 @@ padding-top: 3rem;
 .subreadabilitybox{
     height: auto;
     width: 30%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     text-align: center;
 }
 .readtext{
@@ -215,8 +216,8 @@ padding-top: 3rem;
 
 
     height: 25rem;
-    width: 66%;
-    /* border: 1px solid red; */
+    width: 70%;
+    border: 1px solid red;
     margin: auto;
     display: flex;
 
@@ -227,119 +228,46 @@ padding-top: 3rem;
 .platformdivone{
     height: auto;
     width: 50%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .platformdivtwo{
     height: auto;
     width: 50%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .platformtext{
     height: auto;
     width: 350px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     color: #0D0C22;
     font-weight: bolder;
     font-size: 20px;
 }
 .platformtexts{
-    height: auto;
-    width: 350px;
 color: #6E6D7A;
-font-size: 12px;
+font-size: 10px;
 font-weight: bolder;
-/* border: 1px solid red; */
-margin-top: 1rem;
 }
 
-.float{
-    height: 15rem;
-    width: 70%;
-    margin: auto;
-    /* border: 1px solid red; */
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: auto;
-    margin-top: 1rem;
-}
-.floatdiv{
+.editbtn{
+    padding: 1rem ;
     color: #0D0C22;
-    font-weight: 500;
-    font-size: 14px;
-    height: 7rem;
-    width: 150px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-padding:1rem;
-}
-.platformdivimg{
-    height: 100%;
-    width: 100%;
-}
-
-.contactcontainer{
-    height: 35rem;
-    width: 60%;
-    margin: auto;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    margin-top: 2rem;
-}
-
-.contacttext{
-    color: #0D0C22;
-    font-weight: bolder;
-    font-size: 20px;   
-    padding-top: 1rem;
+    border: 5px solid teal;
+    position: relative;
+    /* z-index: 2; */
    
 }
-
-.contactimg{
-    height: 30rem;
-    width: 50%;
-    /* border: 1px solid red; */
-    margin-left: 2rem;
-}
-.contactimges{
-    height: 100%;
-    width: 100%;
-}
-
-.contactlogo{
-    height: 10rem;
-    width: 30%;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 50%;
-    margin-top: 7rem;
-    margin-left: 2rem;
-}
-
-.contactmaindiv{
-    display: flex;
-}
-.contactlogoimg{
-    height: 50%;
-    width: 75%;
-    margin: auto;
-    margin-top: 2.5rem;
-}
-
-.socialbox{
-    height: 15rem;
-    width: 70%;
-    border: 1px solid red;
-    margin: auto;
-    border-radius: 5px;
-    background-color: #0D0C22;
-    color: #ea4c89;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
-.iconbox{
-    height: 3rem;
+.popup {
+    display: none;
+    position: absolute;
     width: 300px;
-    border: 1px solid red;
-    font-size: 30px;
-    display: flex;
-    justify-content: space-around;
-}
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+  }
+  
+  /* .open-popup {
+    position: relative;
+    z-index: 2;
+  } */
