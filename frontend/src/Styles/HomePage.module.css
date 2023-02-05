@@ -211,3 +211,26 @@ padding-top: 3rem;
     font-size: 35px;
     color: #ea4c89;
 }
+.platformdiv{
+
+
+    height: 25rem;
+    width: 70%;
+    border: 1px solid red;
+    margin: auto;
+    display: flex;
+
+
+}
+
+
+.platformdivone{
+    height: auto;
+    width: 50%;
+    border: 1px solid red;
+}
+.platformdivtwo{
+    height: auto;
+    width: 50%;
+    border: 1px solid red;
+}

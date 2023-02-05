@@ -1,15 +1,15 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import AppContext from "../Context/AppContext";
+import {AppContext} from "../Context/AppContext";
 import styles from "../Styles/HomePage.module.css";
 const HomePage = () => {
 
-const {getcontents,contents}=useContext(AppContext)
+ const {getcontents,contents}=useContext(AppContext)
 
 
     useEffect(()=>{
-getcontents()
+        getcontents()
     },[])
   return (
     <Box>
@@ -39,7 +39,7 @@ getcontents()
       <Box className={styles.sekret}>
         <Image
           className={styles.sekretimg}
-        //   src="https://cdn.dribbble.com/userupload/3288518/file/original-e5dab85d72f26abb6625f13eab805d1e.png?compress=1&resize=1024x768"
+          // src="https://cdn.dribbble.com/userupload/3288518/file/original-e5dab85d72f26abb6625f13eab805d1e.png?compress=1&resize=1024x768"
         src={contents.firstImage}
         />
       </Box>
@@ -53,6 +53,7 @@ getcontents()
       <Box className={styles.new}>
         <Text>{contents.weare_content}</Text>
 
+        {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 
         <Text>eMail: troikagency@gmail.com</Text>
@@ -182,6 +183,21 @@ getcontents()
         </Box>
 
       </Box>
+
+
+<Box className={styles.platformdiv}>
+<Box className={styles.platformdivone}>
+
+</Box>
+<Box className={styles.platformdivtwo}>
+
+</Box>
+
+</Box>
+
+
+
+
     </Box>
   );
 };

@@ -4,6 +4,7 @@ const { ContentModel } = require("../Models/contentModel");
 
 const contentController = Router();
 
+
 contentController.get("/", async (req, res) => {
   try {
     let data = await ContentModel.find();

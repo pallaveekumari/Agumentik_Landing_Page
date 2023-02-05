@@ -1,21 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AppContext=createContext()
 
 
-const AppContextProvider=({children})=>{
+function AppContextProvider({ children }) {
 
 const [contents,setContents]=useState({})
-
+// useEffect(()=>{
+//     getcontents()
+//         },[])
 
 async function getcontents()
 {
+
+    // console.log("hi")
 try{
-let res=await fetch("http://localhost:6000/content")
+let res=await fetch("http://localhost:2000/content")
 let data=await res.json()
-console.log("hi")
-console.log(data)
-setContents(data[0])
+// console.log(data)
+// console.log("hi")
+setContents(data[0]);
 
 }
 catch(err)
