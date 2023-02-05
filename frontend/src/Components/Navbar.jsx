@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Box,Button,Spacer,Text} from "@chakra-ui/react"
 import styles from "../Styles/Navbar.module.css"
+import { AppContext } from '../Context/AppContext'
 const Navbar = () => {
+
+  const {userdetails}=useContext(AppContext)
   return (
     <Box>
   <Box className={styles.smallNav}>
@@ -24,8 +27,8 @@ const Navbar = () => {
 
    <Box className={styles.search}>
     <Box><i class="fa-solid fa-magnifying-glass"></i></Box>
-    <Button>Sign in</Button>
-    <Button>Sign up</Button>
+    <Text>{userdetails.name}</Text>
+    {/* <Button >LogOut</Button> */}
    </Box>
 
   </Box>

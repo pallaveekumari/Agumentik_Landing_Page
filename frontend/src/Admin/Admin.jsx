@@ -5,10 +5,10 @@ import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/Admin.module.css";
 
 const Admin = () => {
-  const { handleChange,getcontents, contents, firstImage ,weareContent} = useContext(AppContext);
+  const { handleChange,getcontents, contents, firstImage,userdetails ,weareContent} = useContext(AppContext);
 
 const [imageurl,setimageurl]=useState("")
-const [weare,setweare]=("")
+const [weare,setweare]=useState("")
 
 
 
@@ -30,7 +30,7 @@ const [weare,setweare]=("")
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-            Sabbir Hossain🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
+          {userdetails.name}🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
             Us
           </Text>
         </Box>
@@ -67,7 +67,7 @@ const [weare,setweare]=("")
             })
             document.querySelector("#popup").style.display = "none";
           }}
-          >Close</Button>
+          >Update</Button>
         </Box>
       </Center>
       </Box>
@@ -84,13 +84,13 @@ const [weare,setweare]=("")
           <Button
           className={styles.editbtn}
           onClick={() => {
-            document.querySelector("#popup").style.display = "block";
+            document.querySelector("#popupweare").style.display = "block";
           }}
         >
           Edit
         </Button>
       
-        <Box id="popup" className={styles.popup}>
+        <Box id="popupweare" className={styles.popup}>
           <Input onChange={(e)=>setweare(e.target.value)} placeholder="Enter title" type="text"/>
           <Button  className={styles.closepopup}
           onClick={() => {
@@ -98,9 +98,9 @@ const [weare,setweare]=("")
             .then((res)=>{
               getcontents();
             })
-            document.querySelector("#popup").style.display = "none";
+            document.querySelector("#popupweare").style.display = "none";
           }}
-          >Close</Button>
+          >Update</Button>
         </Box>
       
         </Text>
@@ -108,7 +108,7 @@ const [weare,setweare]=("")
         {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 
-        <Text>eMail: troikagency@gmail.com</Text>
+        <Text>eMail: {userdetails.email}</Text>
 
         <Text>Thanks!</Text>
       </Box>

@@ -1,10 +1,10 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, Input, Text } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/HomePage.module.css";
 const HomePage = () => {
-  const { getcontents, contents } = useContext(AppContext);
+  const { getcontents, contents ,userdetails} = useContext(AppContext);
 
   useEffect(() => {
     getcontents();
@@ -22,7 +22,7 @@ const HomePage = () => {
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-            Sabbir Hossain🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
+            {userdetails.name}🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
             Us
           </Text>
         </Box>
@@ -49,7 +49,7 @@ const HomePage = () => {
         {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 
-        <Text>eMail: troikagency@gmail.com</Text>
+        <Text>eMail: {userdetails.email}</Text>
 
         <Text>Thanks!</Text>
       </Box>
@@ -207,7 +207,33 @@ const HomePage = () => {
               src="https://assets-global.website-files.com/60e615980cab093e6f2db3c3/60f1c779e1930d77c301c343_Screen_Shot_2019-09-29_at_10.35.46_AM.png"
             />
           </Box>
-          <Box className={styles.contactlogo}>
+
+          <Box id="popup" className={styles.popup}>
+                <Heading>You Can Contact With Us</Heading>
+                <Input   placeholder="Enter Name" type="email" />
+                <Input   placeholder="Enter ContactNumber" type="number" />
+                <Button>
+                  Submit
+                </Button>
+                <Button
+            className={styles.closepopup}
+            id="close-popup"
+            onClick={() => {
+              document.querySelector("#popup").style.display = "none";
+            }}
+          >
+            Close
+          </Button>
+              </Box>
+
+            
+              
+
+
+          <Box  onClick={() => {
+
+document.querySelector("#popup").style.display = "block";
+}} className={styles.contactlogo}>
             <Image
               className={styles.contactlogoimg}
               src="https://guitarzone.in/wp-content/uploads/2015/11/contact_us.png"

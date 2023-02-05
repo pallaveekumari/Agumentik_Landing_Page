@@ -31,7 +31,7 @@ userController.post("/login", async (req, res) => {
       if (user.password == password) {
         // console.log(user.password)
         const token = jwt.sign({ userId: user._id }, process.env.SECRET);
-        res.status(200).json({ message: "Login Success", token ,role:user.admin});
+        res.status(200).json({ msg: "Login Success", token ,role:user.admin,userEmail:user.email,username:user.name});
       }
       else{
         res.status(400).json({ msg: "Login Failed" });

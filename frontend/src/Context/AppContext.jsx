@@ -5,9 +5,9 @@ export const AppContext = createContext();
 
 function AppContextProvider({ children }) {
   const [contents, setContents] = useState({});
+const [userdetails,setUserdetails]=useState({})
 
-
-  const handleSignIn = async (email,password) => {
+  const handleSignIn = async (email, password) => {
     const payload = {
       email,
       password,
@@ -24,18 +24,55 @@ function AppContextProvider({ children }) {
       });
       let data = await res.json();
 
-      alert("You are logged in");
+    //   alert("You are logged in");
 
-      localStorage.setItem("token", res.token);
 
-      return data;
-     
+    if( res.status==200)
+    {
+        localStorage.setItem("token", res.token);
+        let userobject={
+            name:data.username,
+            email:data.userEmail
+        }
+        setUserdetails(userobject)
+       return data;
+    }
+    else{
+        alert("Login Failed")
+    }
+
+      
     } catch (err) {
       console.log(err);
       alert("Login Failed");
     }
   };
 
+  const signup = async (name, email, password) => {
+    const payload = {
+      name,
+      email,
+      password,
+    };
+
+    try {
+      let res = await fetch("http://localhost:8080/auth/signup", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+
+        body: JSON.stringify(payload),
+      });
+
+      let data=await res.json()
+      alert("SignUp successfull!")
+      return data;
+    } catch (err) {
+      console.log(err);
+      alert("Signup Filed Please try again....");
+    }
+  };
   async function firstImage(data) {
     const payload = {
       firstImage: data,
@@ -54,9 +91,11 @@ function AppContextProvider({ children }) {
     return res2;
   }
 
+
+
   async function weareContent(data) {
     const payload = {
-      weareContent: data,
+      "weare_content": data,
     };
 
     let res = await fetch("http://localhost:8080/content/update", {
@@ -86,7 +125,7 @@ function AppContextProvider({ children }) {
   }
   return (
     <AppContext.Provider
-      value={{ getcontents, contents, firstImage, weareContent ,handleSignIn}}
+      value={{ getcontents, userdetails, signup,contents, firstImage, weareContent, handleSignIn }}
     >
       {children}
     </AppContext.Provider>

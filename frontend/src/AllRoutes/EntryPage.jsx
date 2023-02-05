@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import {
   Box,
   Button,
+  Heading,
   Image,
   Input,
   Text,
@@ -18,12 +19,25 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { AppContext } from "../Context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const EntryPage = () => {
-  const { handleSignIn } = useContext(AppContext);
+  const { handleSignIn ,signup} = useContext(AppContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+
+  const[signUpName,setSignupName]=useState("")
+  const [signupEmail,setSignupEmail]=useState("")
+  const [signupPassword,setsignupPassword]=useState("")
+
+
+  const [adminEmail,setadminEmail]=useState("")
+  const [adminPassword,setadminPassword]=useState("")
+
+const navigate=useNavigate()
   const OverlayOne = () => (
     <ModalOverlay
       bg="blackAlpha.300"
@@ -46,9 +60,10 @@ const EntryPage = () => {
   return (
     <Box>
       <Box className={styles.container}>
-        <Button
+        <Box
           ml="4"
           onClick={() => {
+            
             setOverlay(<OverlayTwo />);
             onOpen();
           }}
@@ -62,30 +77,45 @@ const EntryPage = () => {
               />
             </Box>
           </Box>
-        </Button>
+        </Box>
         <Modal isCentered isOpen={isOpen} onClose={onClose}>
           {overlay}
           <ModalContent>
             <ModalHeader>Signup</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Input placeholder="Enter Name" type="text" />
-              <Input placeholder="Enter Email" type="text" />
-              <Input placeholder="Enter Password" type="email" />
+              
+              <Input onChange={(e)=>setSignupName(e.target.value)} placeholder="Enter Name" type="text" />
+              <Input onChange={(e)=>setSignupEmail(e.target.value)} placeholder="Enter Email" type="email" />
+              <Input onChange={(e)=>setsignupPassword(e.target.value)} placeholder="Enter Password" type="password" />
             </ModalBody>
             <ModalFooter>
               <Box id="popup" className={styles.popup}>
-                <Input placeholder="Enter Email" type="text" />
-                <Input placeholder="Enter Password" type="email" />
+                <Heading>Login Here</Heading>
+                <Input  onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" type="email" />
+                <Input   onChange={(e) => setPassword(e.target.value)} placeholder="Enter Password" type="password" />
                 <Button
                   className={styles.closepopup}
                   id="close-popup"
                   onClick={() => {
-                    handleSignIn();
-                    document.querySelector("#popup").style.display = "none";
+                    handleSignIn(email,password)
+                    .then((res)=>{
+                      // console.log(res)
+                     if(res.role==true)
+                     {
+                      alert("You are logged in")
+                        navigate("/admin")
+                     }
+                     else{
+                      alert("You are logged in")
+                      navigate("/")
+                     }
+
+                    })
+                   
                   }}
                 >
-                  Close
+                  Login
                 </Button>
               </Box>
 
@@ -93,6 +123,7 @@ const EntryPage = () => {
               <Button
                 className={styles.editbtn}
                 onClick={() => {
+
                   document.querySelector("#popup").style.display = "block";
                 }}
               >
@@ -101,7 +132,11 @@ const EntryPage = () => {
               <Button
                 className={styles.editbtn}
                 onClick={() => {
-                  document.querySelector("#popup").style.display = "block";
+                  signup(signUpName,signupEmail,signupPassword)
+                  .then((res)=>{
+
+                    document.querySelector("#popup").style.display = "block";
+                  })
                 }}
               >
                 Submit
@@ -110,16 +145,21 @@ const EntryPage = () => {
           </ModalContent>
         </Modal>
 
+
+
+
+
         <Box id="popups" className={styles.popup}>
+        <Heading>Login Here</Heading>
           <Input
-            onChange={(e) => setEmail(e.target.value)}
+           onChange={(e)=>setadminEmail(e.target.value)}
             placeholder="Enter Email"
-            type="text"
+            type="email"
           />
           <Input
-            onChange={(e) => setPassword(e.target.value)}
+          onChange={(e)=>setadminPassword(e.target.value)}
             placeholder="Enter Password"
-            type="email"
+            type="password"
           />
           <Button
             className={styles.closepopup}
@@ -130,7 +170,22 @@ const EntryPage = () => {
           >
             Close
           </Button>
-          <Button>Submit</Button>
+          <Button
+          onClick={()=>{
+            handleSignIn(adminEmail,adminPassword)
+            .then((res)=>{
+              if(res.role==true)
+              {
+                alert("You are Logged in")
+                navigate("/admin")
+
+              }
+              else{
+                alert("You are not Admin!")
+              }
+            })
+          }}
+          >Login</Button>
         </Box>
 
         <Box className={styles.user}>

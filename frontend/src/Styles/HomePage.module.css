@@ -334,6 +334,23 @@ padding:1rem;
   justify-content: center;
   align-items: center; */
 }
+.editbtn{
+    padding: 1rem ;
+    color: #0D0C22;
+    border: 5px solid teal;
+    position: relative;
+    /* z-index: 1; */
+   
+}
+.popup {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+  }
 
 .iconbox{
     height: 3rem;
