@@ -1,14 +1,50 @@
 import { Box, Button, Heading, Image, Input, Text } from "@chakra-ui/react";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/HomePage.module.css";
 const HomePage = () => {
-  const { getcontents, contents ,userdetails} = useContext(AppContext);
+  const { getcontents, contents, userdetails } = useContext(AppContext);
 
+
+  const[name,setName]=useState("")
+  const [contact,setcontact]=useState("")
   useEffect(() => {
     getcontents();
   }, []);
+
+
+
+  async function handleAddLeads(name,contact)
+  {
+    
+try{
+let res=await fetch("http://localhost:8080/leads/addLeads",{
+  method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+
+        body: JSON.stringify({name,contact}),
+      
+})
+
+if(res.status==200)
+{
+
+  alert("Thanks For Contacting Us!")
+  document.querySelector("#popup").style.display = "none";
+
+}
+else{
+  alert("Something Went Wrong!")
+}
+}
+catch(err)
+{
+  console.log(err)
+}
+  }
   return (
     <Box>
       <Navbar />
@@ -22,8 +58,8 @@ const HomePage = () => {
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-            {userdetails.name}🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
-            Us
+            {userdetails.name}🎯 for Troikagency - UX/UI Design
+            Agency•Follow•Hire Us
           </Text>
         </Box>
         <Box className={styles.buttonbox}>
@@ -97,9 +133,7 @@ const HomePage = () => {
         <Text className={styles.apitext}>
           {contents.apiDevelopment_content}
         </Text>
-        <Box className={styles.apitexts}>
-          {contents.apiApproach_content}
-        </Box>
+        <Box className={styles.apitexts}>{contents.apiApproach_content}</Box>
       </Box>
 
       <Box className={styles.toobox}>
@@ -107,11 +141,11 @@ const HomePage = () => {
           <Box className={styles.tooboximg}>
             <Image
               className={styles.tooimg}
-              src="https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=365&q=80"
+              src={contents.toomanyimage}
             />
-            <Text className={styles.tootext}>Too many moving parts</Text>
+            <Text className={styles.tootext}>{contents.toomanycontent}</Text>
             <Text className={styles.tootexts}>
-              Understanding complex API interaction is difficult
+              {contents.toomanysmallcontent}
             </Text>
           </Box>
         </Box>
@@ -120,11 +154,11 @@ const HomePage = () => {
           <Box className={styles.tooboximg}>
             <Image
               className={styles.tooimg}
-              src="https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=365&q=80"
+              src={contents.diminishingImage}
             />
-            <Text className={styles.tootext}>Too many moving parts</Text>
+            <Text className={styles.tootext}>{contents.diminishingContent}</Text>
             <Text className={styles.tootexts}>
-              Understanding complex API interaction is difficult
+              {contents.diminishingsmallcontent}
             </Text>
           </Box>
         </Box>
@@ -132,23 +166,20 @@ const HomePage = () => {
           <Box className={styles.tooboximg}>
             <Image
               className={styles.tooimg}
-              src="https://images.unsplash.com/photo-1661956602139-ec64991b8b16?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=365&q=80"
+              src={contents.changeImage}
             />
-            <Text className={styles.tootext}>Too many moving parts</Text>
+            <Text className={styles.tootext}>{contents.changeContent}</Text>
             <Text className={styles.tootexts}>
-              Understanding complex API interaction is difficult
+{contents.changesmallcontent}
             </Text>
           </Box>
         </Box>
       </Box>
 
       <Box>
-        <Text className={styles.apitext}>A Glimpse Into the Future</Text>
+        <Text className={styles.apitext}>{contents.glimpse_content}</Text>
         <Box className={styles.apitextcutting}>
-          Seekret's cutting-edge API abservability platform leverages you
-          application traffic to simplify API management automatically detects
-          breaking changes and improves enginerring velocity with context and
-          automation to the Api development lifecycle
+          {contents.seekers_cutting_edge}
         </Box>
       </Box>
 
@@ -178,7 +209,7 @@ const HomePage = () => {
       <Box className={styles.platformdiv}>
         <Box className={styles.platformdivone}>
           <Box className={styles.platformtext}>
-            The Seekret API Observability Platform
+          {contents.sekret_content}
           </Box>
           <Box className={styles.platformtexts}>
             The ultimate foundation for managibg and maintaining APIs as they
@@ -209,31 +240,27 @@ const HomePage = () => {
           </Box>
 
           <Box id="popup" className={styles.popup}>
-                <Heading>You Can Contact With Us</Heading>
-                <Input   placeholder="Enter Name" type="email" />
-                <Input   placeholder="Enter ContactNumber" type="number" />
-                <Button>
-                  Submit
-                </Button>
-                <Button
-            className={styles.closepopup}
-            id="close-popup"
+            <Heading>You Can Contact With Us</Heading>
+            <Input onChange={(e)=>{setName(e.target.value)}} placeholder="Enter Name" type="email" />
+            <Input onChange={(e)=>{setcontact(e.target.value)}} placeholder="Enter ContactNumber" type="number" />
+            <Button onClick={()=>handleAddLeads(name,contact)}>Submit</Button>
+            <Button
+              className={styles.closepopup}
+              id="close-popup"
+              onClick={() => {
+                document.querySelector("#popup").style.display = "none";
+              }}
+            >
+              Close
+            </Button>
+          </Box>
+
+          <Box
             onClick={() => {
-              document.querySelector("#popup").style.display = "none";
+              document.querySelector("#popup").style.display = "block";
             }}
+            className={styles.contactlogo}
           >
-            Close
-          </Button>
-              </Box>
-
-            
-              
-
-
-          <Box  onClick={() => {
-
-document.querySelector("#popup").style.display = "block";
-}} className={styles.contactlogo}>
             <Image
               className={styles.contactlogoimg}
               src="https://guitarzone.in/wp-content/uploads/2015/11/contact_us.png"
@@ -242,17 +269,14 @@ document.querySelector("#popup").style.display = "block";
         </Box>
       </Box>
 
-
-
       <Box className={styles.socialbox}>
-           <Image src="https://image.pitchbook.com/MHscGLdx0QAerX1Swj8EYpe9a5g1629461864512_200x200"/>
-      <Box className={styles.iconbox}>
-      <i class="fa-brands fa-facebook-f"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-linkedin"></i>
-      </Box>
-      
+        <Image src="https://image.pitchbook.com/MHscGLdx0QAerX1Swj8EYpe9a5g1629461864512_200x200" />
+        <Box className={styles.iconbox}>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </Box>
       </Box>
     </Box>
   );

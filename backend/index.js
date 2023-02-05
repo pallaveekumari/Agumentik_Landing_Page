@@ -4,6 +4,7 @@ const { connection } = require('./config/db');
 const { contentController } = require('./Routes/contentRoutes');
 const { userController } = require('./Routes/UserRoutes');
 const cors = require('cors');
+const { leadsController } = require('./Routes/leadsRoutes');
 
 const port=process.env.PORT || 8080
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use('/auth',userController);
 app.use('/content',contentController)
+app.use('/leads',leadsController);
 app.get('/',(req,res)=>{
     res.send('Welcme to Bangalore')
 })

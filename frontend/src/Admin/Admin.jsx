@@ -1,21 +1,76 @@
-import { Box, Button, Center, Image, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Heading,
+  Image,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/Admin.module.css";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
 
 const Admin = () => {
-  const { handleChange,getcontents, contents, firstImage,userdetails ,weareContent} = useContext(AppContext);
+  const {
+    handleChange,
+    getcontents,
+    getUsers,
+    leads,
+    users,
+    getLeads,
+    contents,
+    firstImage,
+    userdetails,
+    weareContent,
+  } = useContext(AppContext);
 
-const [imageurl,setimageurl]=useState("")
-const [weare,setweare]=useState("")
-
-
-
+  const [imageurl, setimageurl] = useState("");
+  const [weare, setweare] = useState("");
 
   useEffect(() => {
     getcontents();
+    getUsers();
+    getLeads();
   }, []);
+
+  const handleAdmin = async (email) => {
+    try {
+      let res = await fetch("http://localhost:8080/auth/makeadmin", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+
+        body: JSON.stringify({ email }),
+      });
+      let data=await res.json()
+      if(res.status==200)
+      {
+        alert(`${email} added as an admin!`)
+        getUsers()
+      }
+      else
+      {
+        alert("Something Went wrong!")
+      }
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Box>
@@ -30,8 +85,8 @@ const [weare,setweare]=useState("")
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-          {userdetails.name}🎯 for Troikagency - UX/UI Design Agency•Follow•Hire
-            Us
+            {userdetails.name}🎯 for Troikagency - UX/UI Design
+            Agency•Follow•Hire Us
           </Text>
         </Box>
         <Box className={styles.buttonbox}>
@@ -57,19 +112,25 @@ const [weare,setweare]=useState("")
           Edit
         </Button>
         <Center>
-        <Box id="popup" className={styles.popup}>
-          <Input onChange={(e)=>setimageurl(e.target.value)} placeholder="Enter Image URL" type="url"/>
-          <Button  className={styles.closepopup}
-          onClick={() => {
-            firstImage(imageurl)
-            .then((res)=>{
-              getcontents();
-            })
-            document.querySelector("#popup").style.display = "none";
-          }}
-          >Update</Button>
-        </Box>
-      </Center>
+          <Box id="popup" className={styles.popup}>
+            <Input
+              onChange={(e) => setimageurl(e.target.value)}
+              placeholder="Enter Image URL"
+              type="url"
+            />
+            <Button
+              className={styles.closepopup}
+              onClick={() => {
+                firstImage(imageurl).then((res) => {
+                  getcontents();
+                });
+                document.querySelector("#popup").style.display = "none";
+              }}
+            >
+              Update
+            </Button>
+          </Box>
+        </Center>
       </Box>
 
       <Box className={styles.heytextbox}>
@@ -82,27 +143,32 @@ const [weare,setweare]=useState("")
         <Text>
           {contents.weare_content}
           <Button
-          className={styles.editbtn}
-          onClick={() => {
-            document.querySelector("#popupweare").style.display = "block";
-          }}
-        >
-          Edit
-        </Button>
-      
-        <Box id="popupweare" className={styles.popup}>
-          <Input onChange={(e)=>setweare(e.target.value)} placeholder="Enter title" type="text"/>
-          <Button  className={styles.closepopup}
-          onClick={() => {
-            weareContent(weare)
-            .then((res)=>{
-              getcontents();
-            })
-            document.querySelector("#popupweare").style.display = "none";
-          }}
-          >Update</Button>
-        </Box>
-      
+            className={styles.editbtn}
+            onClick={() => {
+              document.querySelector("#popupweare").style.display = "block";
+            }}
+          >
+            Edit
+          </Button>
+
+          <Box id="popupweare" className={styles.popup}>
+            <Input
+              onChange={(e) => setweare(e.target.value)}
+              placeholder="Enter title"
+              type="text"
+            />
+            <Button
+              className={styles.closepopup}
+              onClick={() => {
+                weareContent(weare).then((res) => {
+                  getcontents();
+                });
+                document.querySelector("#popupweare").style.display = "none";
+              }}
+            >
+              Update
+            </Button>
+          </Box>
         </Text>
 
         {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
@@ -251,6 +317,60 @@ const [weare,setweare]=useState("")
           </Box>
         </Box>
         <Box className={styles.platformdivtwo}></Box>
+      </Box>
+
+      <Box className={styles.leadbox}>
+        <Heading>Leads</Heading>
+        <TableContainer>
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>Name</Th>
+                <Th>Contact Number</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {leads?.map((el) => {
+                return (
+                  <Tr>
+                    <Td>{el.name}</Td>
+                    <Td> {el.contact}</Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+          </Table>
+        </TableContainer>
+      </Box>
+
+      <Box>
+        <Heading>Users</Heading>
+        <TableContainer>
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>Name</Th>
+                <Th>Email</Th>
+                <Th></Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {users?.map((el) => {
+                return (
+                  <Tr>
+                    <Td>{el.name}</Td>
+                    <Td> {el.email}</Td>
+                    <Td>
+                      <Button onClick={() => handleAdmin(el.email)}>
+                        Add as Admin
+                      </Button>
+                    </Td>
+                  </Tr>
+                );
+              })}
+            </Tbody>
+          </Table>
+        </TableContainer>
       </Box>
     </Box>
   );

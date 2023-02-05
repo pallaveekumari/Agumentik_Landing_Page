@@ -6,7 +6,43 @@ export const AppContext = createContext();
 function AppContextProvider({ children }) {
   const [contents, setContents] = useState({});
 const [userdetails,setUserdetails]=useState({})
+const [leads,setLeads]=useState([])
+const[users,setUsers]=useState([])
 
+
+
+const getLeads=async()=>{
+try{
+let res=await fetch("http://localhost:8080/leads")
+let data=await res.json()
+setLeads(data.data)
+}
+catch(err)
+{
+    console.log(err)
+}
+}
+
+
+
+const getUsers=async()=>{
+    try{
+    let res=await fetch("http://localhost:8080/auth/users")
+    let data=await res.json()
+    if(res.status==200)
+    {
+        let updated=data.data.filter((el)=>{
+             return el.admin==false
+        })
+        setUsers(updated)
+    }
+    
+    }
+    catch(err)
+    {
+        console.log(err)
+    }
+    }
   const handleSignIn = async (email, password) => {
     const payload = {
       email,
@@ -125,7 +161,7 @@ const [userdetails,setUserdetails]=useState({})
   }
   return (
     <AppContext.Provider
-      value={{ getcontents, userdetails, signup,contents, firstImage, weareContent, handleSignIn }}
+      value={{ getcontents,getLeads, userdetails,getUsers,leads,users, signup,contents, firstImage, weareContent, handleSignIn }}
     >
       {children}
     </AppContext.Provider>

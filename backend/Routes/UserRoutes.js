@@ -42,6 +42,31 @@ userController.post("/login", async (req, res) => {
   }
 });
 
+
+
+userController.post('/makeadmin',async(req,res)=>{
+  let {email} = req.body;
+
+  try{
+      let updated = await UserModel.findOneAndUpdate({email},{admin:true});
+      res.status(200).json({msg:'admin creation success'})
+  }catch(err){
+      res.status(400).json({
+          msg:'something went wrong'
+      })
+  }
+})
+
+
+userController.get('/users',async(req,res)=>{
+  try{
+      let data = await UserModel.find();
+      res.status(200).send({msg:"userData",data:data})
+  }catch(err){
+      res.status(400).json({msg:'failed'})
+  }
+})
+
 module.exports = {
   userController,
 };
