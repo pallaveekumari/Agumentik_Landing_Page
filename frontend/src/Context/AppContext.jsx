@@ -1,12 +1,40 @@
 import { createContext, useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
 export const AppContext = createContext();
 
 function AppContextProvider({ children }) {
   const [contents, setContents] = useState({});
-  // useEffect(()=>{
-  //     getcontents()
-  //         },[])
+
+
+  const handleSignIn = async (email,password) => {
+    const payload = {
+      email,
+      password,
+    };
+
+    try {
+      let res = await fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+
+        body: JSON.stringify(payload),
+      });
+      let data = await res.json();
+
+      alert("You are logged in");
+
+      localStorage.setItem("token", res.token);
+
+      return data;
+     
+    } catch (err) {
+      console.log(err);
+      alert("Login Failed");
+    }
+  };
 
   async function firstImage(data) {
     const payload = {
@@ -26,10 +54,9 @@ function AppContextProvider({ children }) {
     return res2;
   }
 
-
   async function weareContent(data) {
     const payload = {
-        weareContent: data,
+      weareContent: data,
     };
 
     let res = await fetch("http://localhost:8080/content/update", {
@@ -45,9 +72,6 @@ function AppContextProvider({ children }) {
     return res2;
   }
 
-
-
-
   async function getcontents() {
     // console.log("hi")
     try {
@@ -61,7 +85,9 @@ function AppContextProvider({ children }) {
     }
   }
   return (
-    <AppContext.Provider value={{ getcontents, contents, firstImage ,weareContent}}>
+    <AppContext.Provider
+      value={{ getcontents, contents, firstImage, weareContent ,handleSignIn}}
+    >
       {children}
     </AppContext.Provider>
   );

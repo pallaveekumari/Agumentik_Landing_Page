@@ -5,7 +5,7 @@ import { AppContext } from "../Context/AppContext";
 import styles from "../Styles/Admin.module.css";
 
 const Admin = () => {
-  const { getcontents, contents, firstImage ,weareContent} = useContext(AppContext);
+  const { handleChange,getcontents, contents, firstImage ,weareContent} = useContext(AppContext);
 
 const [imageurl,setimageurl]=useState("")
 const [weare,setweare]=("")
