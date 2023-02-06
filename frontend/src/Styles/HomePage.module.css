@@ -325,11 +325,13 @@ padding:1rem;
 .socialbox{
     height: 15rem;
     width: 70%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: auto;
     border-radius: 5px;
     background-color: #0D0C22;
     color: #ea4c89;
+    border-radius: 15px;
+    margin-top: 2rem;
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -349,8 +351,27 @@ padding:1rem;
 .iconbox{
     height: 3rem;
     width: 300px;
-    border: 1px solid red;
-    font-size: 30px;
+    /* border: 1px solid red; */
+    /* font-size: 30px; */
     display: flex;
     justify-content: space-around;
+    margin-left: 20rem;
+    margin-top: -2rem;
+
+}
+.iconboxbutton{
+    font-size: 20px;
+    background-color: #0D0C22;
+
+
+}
+.socialboximg{
+   margin-left: 23rem;
+}
+.facebookiconimage{
+    height: 2.5rem;
+    width: 4rem;
+   background-color: #0D0C22;
+   
+
 }

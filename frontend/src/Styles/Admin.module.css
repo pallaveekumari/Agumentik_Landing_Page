@@ -65,6 +65,8 @@
     /* border: 1px solid red; */
     border-radius: 15px;
     margin: auto;
+    margin-bottom: 5rem;
+    /* border: 1px solid red; */
 }
 .missionimg{
     height: 100%;
@@ -81,6 +83,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 4rem;
 }
 .solutionbox{
     height: 28rem;
@@ -144,9 +147,10 @@ padding-top: 3rem;
     justify-content: space-around;
     /* gap: 0.5rem; */
     margin-top: 2rem;
+    margin-bottom: 7rem;
 }
 .tooboxes{
-    height: auto;
+    height: 27rem;
     width: 29%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 5px;
@@ -189,7 +193,7 @@ padding-top: 3rem;
 .readabilitybox{
     width: 55%;
     margin: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 8rem;
     margin-top: 1rem;
     display: flex;
@@ -199,7 +203,7 @@ padding-top: 3rem;
 .subreadabilitybox{
     height: auto;
     width: 30%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: center;
 }
 .readtext{
@@ -207,7 +211,24 @@ padding-top: 3rem;
     font-weight: bolder;
     font-size: 18px;
 }
+.iconbox{
+    height: 7rem;
+    width: 600px;
+    /* border: 1px solid red; */
+    /* font-size: 30px; */
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20rem;
+   /* border: 1px solid red; */
+margin: auto;
+}
+.facebookiconimage{
+    height: 4rem;
+    width: 4rem;
+   background-color: #0D0C22;
+   
 
+}
 .bulbicon{
     font-size: 35px;
     color: #ea4c89;
