@@ -49,7 +49,7 @@ const HomePage = () => {
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-            {userdetails.name}🎯 for Troikagency - UX/UI Design
+            <span className={styles.userdetail}>{userdetails.name}</span>🎯 for Troikagency - UX/UI Design
             Agency•Follow•Hire Us
           </Text>
         </Box>
@@ -76,7 +76,7 @@ const HomePage = () => {
         {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 
-        <Text>eMail: {userdetails.email}</Text>
+        <Text>eMail: <span className={styles.useremail}>{userdetails.email}</span></Text>
 
         <Text>Thanks!</Text>
       </Box>
@@ -252,11 +252,13 @@ const HomePage = () => {
           </Box>
 
           <Box
+           
             onClick={() => {
               document.querySelector("#popup").style.display = "block";
             }}
             className={styles.contactlogo}
           >
+            <Text className={styles.contacttext}>Click Me</Text>
             <Image
               className={styles.contactlogoimg}
               src="https://guitarzone.in/wp-content/uploads/2015/11/contact_us.png"
@@ -266,6 +268,7 @@ const HomePage = () => {
       </Box>
 
       <Box className={styles.socialbox}>
+      
         <Image
           className={styles.socialboximg}
           src="https://image.pitchbook.com/MHscGLdx0QAerX1Swj8EYpe9a5g1629461864512_200x200"

@@ -24,6 +24,13 @@
     width: 60%;
     /* border: 1px solid red; */
 }
+.userdetail{
+    color: #ea4c89;
+    font-size: 15px;
+  }
+  .useremail{
+    color: #ea4c89;
+  }
 .sekret{
     height: 55rem;
     width: 80%;
@@ -319,7 +326,10 @@ padding:1rem;
     height: 50%;
     width: 75%;
     margin: auto;
-    margin-top: 2.5rem;
+   
+}
+.contactlogoimg:hover{
+    cursor: pointer;
 }
 
 .socialbox{

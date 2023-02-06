@@ -37,6 +37,9 @@ function AppContextProvider({ children }) {
       console.log(err);
     }
   };
+
+
+  
   const handleSignIn = async (email, password) => {
     const payload = {
       email,

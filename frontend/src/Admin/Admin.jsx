@@ -123,7 +123,7 @@ const Admin = () => {
         <Box className={styles.profiletext}>
           <Text>Seekret API Platform Landing page</Text>
           <Text>
-            {userdetails.name}🎯 for Troikagency - UX/UI Design
+           <span className={styles.userdetail}>{userdetails.name}</span> 🎯 for Troikagency - UX/UI Design
             Agency•Follow•Hire Us
           </Text>
         </Box>
@@ -167,6 +167,14 @@ const Admin = () => {
             >
               Update
             </Button>
+            <Button
+                onClick={() => {
+                  document.querySelector("#popup").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
           </Box>
         </Center>
       </Box>
@@ -200,6 +208,14 @@ const Admin = () => {
             >
               Update
             </Button>
+            <Button
+                onClick={() => {
+                  document.querySelector("#popupheyguys").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
           </Box>
         </Text>
       </Box>
@@ -233,13 +249,21 @@ const Admin = () => {
             >
               Update
             </Button>
+            <Button
+                onClick={() => {
+                  document.querySelector("#popupweare").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
           </Box>
         </Text>
 
         {/* <Text>Skype: live:.cid.c9595de1a5711a73</Text> */}
         <Text>Skype: live:.cid.c9595de1a5711a73</Text>
 
-        <Text>eMail: {userdetails.email}</Text>
+        <Text>eMail: <span className={styles.useremail}>{userdetails.email}</span></Text>
 
         <Text>Thanks!</Text>
       </Box>
@@ -274,6 +298,14 @@ const Admin = () => {
             >
               Update
             </Button>
+            <Button
+                onClick={() => {
+                  document.querySelector("#popupsecondimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
           </Box>
         </Center>
       </Box>
@@ -313,6 +345,14 @@ const Admin = () => {
               >
                 Update
               </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#popupsolutionimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -348,6 +388,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popupsolution").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
           </Box>
@@ -404,6 +452,14 @@ const Admin = () => {
               >
                 Update
               </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#popapidev").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
             </Box>
           </Center>
         </Text>
@@ -434,6 +490,15 @@ const Admin = () => {
                 }}
               >
                 Update
+              </Button>
+
+              <Button
+                onClick={() => {
+                  document.querySelector("#popapiappr").style.display =
+                    "none";
+                }}
+              >
+                Close
               </Button>
             </Box>
           </Center>
@@ -472,6 +537,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popuptoomanyimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Center>
             <Text className={styles.tootext}>
@@ -505,6 +578,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popmanycontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
             <Text className={styles.tootexts}>
@@ -538,6 +619,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popmanysmallcontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
           </Box>
@@ -575,6 +664,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popupdimishimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Center>
             <Text className={styles.tootext}>
@@ -608,6 +705,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popdimishcontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
             <Text className={styles.tootexts}>
@@ -645,6 +750,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popdimishsmallcontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
           </Box>
@@ -681,6 +794,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popchangeimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Center>
 
@@ -714,6 +835,15 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+               
+                <Button
+                onClick={() => {
+                  document.querySelector("#popchangecontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
             <Text className={styles.tootexts}>
@@ -748,6 +878,14 @@ const Admin = () => {
                 >
                   Update
                 </Button>
+                <Button
+                onClick={() => {
+                  document.querySelector("#popdchangesmallcontent").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
               </Box>
             </Text>
           </Box>
@@ -821,6 +959,14 @@ const Admin = () => {
               >
                 Update
               </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#popfacebookimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
             </Box>
           </Center>
         </Box>
@@ -857,6 +1003,15 @@ const Admin = () => {
               >
                 Update
               </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#poptweeterimage").style.display =
+                    "none";
+                }}
+              >
+                Close
+              </Button>
+              
             </Box>
           </Center>
         </Box>
@@ -892,6 +1047,14 @@ const Admin = () => {
                 }}
               >
                 Update
+              </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#popinstaimage").style.display =
+                    "none";
+                }}
+              >
+                Close
               </Button>
             </Box>
           </Center>
@@ -929,6 +1092,14 @@ const Admin = () => {
                 }}
               >
                 Update
+              </Button>
+              <Button
+                onClick={() => {
+                  document.querySelector("#poppinterestimage").style.display =
+                    "none";
+                }}
+              >
+                Close
               </Button>
             </Box>
           </Center>
@@ -975,7 +1146,7 @@ const Admin = () => {
         </Button>
       </Box>
 
-      <Box>
+      <Box  className={styles.leadbox}>
         <Heading>Users</Heading>
         <TableContainer>
           <Table variant="simple">

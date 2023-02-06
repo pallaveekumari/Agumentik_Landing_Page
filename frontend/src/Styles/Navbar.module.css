@@ -11,16 +11,31 @@ align-items: center;
 
 
 }
-
+.profile{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+.profileimg{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
 .navBox{
     height: 5rem;
     width:"100%";
-    border: 0.5px solid#6E6D7A;
+    /* border: 0.5px solid#6E6D7A; */
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
+    border-bottom: 1px solid#6E6D7A;
 
 }
+.userdetail{
+    color: #ea4c89;
+    font-size: 15px;
+  }
 .dribble{
     height: auto;
     width: 130px;
@@ -47,7 +62,7 @@ align-items: center;
 
 .search{
     height: auto;
-    width: 17rem;
+    width: 16rem;
     /* border: 4px solid red; */
     display: flex;
     justify-content: space-around;

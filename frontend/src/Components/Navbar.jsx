@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Box,Button,Spacer,Text} from "@chakra-ui/react"
+import {Box,Button,Image,Spacer,Text} from "@chakra-ui/react"
 import styles from "../Styles/Navbar.module.css"
 import { AppContext } from '../Context/AppContext'
 const Navbar = () => {
@@ -27,8 +27,14 @@ const Navbar = () => {
 
    <Box className={styles.search}>
     <Box><i class="fa-solid fa-magnifying-glass"></i></Box>
-    <Text>{userdetails.name}</Text>
-    {/* <Button >LogOut</Button> */}
+    <Box className={styles.profile}>
+          <Image
+            className={styles.profileimg}
+            src="https://pixlr.com/images/index/remove-bg.webp"
+          />
+        </Box>
+    <Text><span className={styles.userdetail}>{userdetails.name}</span></Text>
+    
    </Box>
 
   </Box>

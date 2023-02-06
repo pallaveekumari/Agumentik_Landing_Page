@@ -287,8 +287,21 @@ font-weight: bolder;
     border: 1px solid black;
     z-index: 1;
   }
-  
-  /* .open-popup {
-    position: relative;
-    z-index: 2;
-  } */
+ 
+
+  .leadbox{
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: auto;
+    width: 70%;
+    margin-top: 2rem;
+
+  }
+
+  .userdetail{
+    color: #ea4c89;
+    font-size: 15px;
+  }
+  .useremail{
+    color: #ea4c89;
+  }

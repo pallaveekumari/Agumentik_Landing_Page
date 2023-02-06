@@ -108,7 +108,7 @@ const navigate=useNavigate()
                      }
                      else{
                       alert("You are logged in")
-                      navigate("/")
+                      navigate("/home")
                      }
 
                     })
@@ -117,6 +117,15 @@ const navigate=useNavigate()
                 >
                   Login
                 </Button>
+                <Button
+            className={styles.closepopup}
+            id="close-popup"
+            onClick={() => {
+              document.querySelector("#popup").style.display = "none";
+            }}
+          >
+            Close
+          </Button>
               </Box>
 
               <Text>AlreadyRegistered:</Text>
@@ -187,6 +196,9 @@ const navigate=useNavigate()
           }}
           >Login</Button>
         </Box>
+
+
+
 
         <Box className={styles.user}>
           <Text>
