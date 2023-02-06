@@ -26,7 +26,8 @@
 }
 .userdetail{
     color: #ea4c89;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
   }
   .useremail{
     color: #ea4c89;
@@ -317,8 +318,17 @@ padding:1rem;
     border-radius: 50%;
     margin-top: 7rem;
     margin-left: 2rem;
+    animation-name: random;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
 }
 
+@keyframes random {
+    0% {scale: 1;} 
+    50% {scale: 1.5;}
+    100% {scale: 1;}
+}
 .contactmaindiv{
     display: flex;
 }
@@ -335,16 +345,17 @@ padding:1rem;
 .socialbox{
     height: 15rem;
     width: 70%;
-    /* border: 1px solid red; */
+    /* border: 2px solid red; */
     margin: auto;
     border-radius: 5px;
     background-color: #0D0C22;
     color: #ea4c89;
     border-radius: 15px;
     margin-top: 2rem;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 .popup {
@@ -352,21 +363,31 @@ padding:1rem;
     position: absolute;
     width: 300px;
     height: 300px;
-    background-color: white;
-    border: 8px solid #ea4c89;
+  
+    /* border: 8px solid #ea4c89; */
     border-radius: 15px;
     z-index: 1;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
-
+.poptext{
+    color: #ea4c89;
+}
 .iconbox{
-    height: 3rem;
-    width: 300px;
+    height: 5rem;
+    width: 500px;
     /* border: 1px solid red; */
-    /* font-size: 30px; */
+    font-size: 35px;
     display: flex;
-    justify-content: space-around;
-    margin-left: 20rem;
-    margin-top: -2rem;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    gap: 4rem;
+    margin-top: -4rem;
 
 }
 .iconboxbutton{
@@ -375,9 +396,9 @@ padding:1rem;
 
 
 }
-.socialboximg{
+/* .socialboximg{
    margin-left: 23rem;
-}
+} */
 .facebookiconimage{
     height: 2.5rem;
     width: 4rem;

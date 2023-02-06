@@ -58,7 +58,8 @@ const navigate=useNavigate()
   const [overlay, setOverlay] = React.useState(<OverlayOne />);
 
   return (
-    <Box>
+    <Box className={styles.main}>
+      <Heading>Agumentik</Heading>
       <Box className={styles.container}>
         <Box
           ml="4"
@@ -69,11 +70,13 @@ const navigate=useNavigate()
           }}
         >
           <Box className={styles.admin}>
-            <Button className={styles.editbtn}>USER</Button>
+            <Button 
+            colorScheme={"pink"}
+            className={styles.editbtn}>USER</Button>
             <Box className={styles.userimgbox}>
               <Image
-                className={styles.userimg}
-                src="https://blog.walls.io/wp-content/uploads/2020/04/Social-Feed-Website-embed.jpg"
+                className={styles.userimgs}
+                src="https://us.123rf.com/450wm/osherro/osherro2010/osherro201000011/osherro201000011.jpg?ver=6"
               />
             </Box>
           </Box>
@@ -91,7 +94,7 @@ const navigate=useNavigate()
             </ModalBody>
             <ModalFooter>
               <Box id="popup" className={styles.popup}>
-                <Heading>Login Here</Heading>
+                <Heading color={"#ea4c89"}>Login Here</Heading>
                 <Input  onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" type="email" />
                 <Input   onChange={(e) => setPassword(e.target.value)} placeholder="Enter Password" type="password" />
                 <Button
@@ -122,6 +125,7 @@ const navigate=useNavigate()
             id="close-popup"
             onClick={() => {
               document.querySelector("#popup").style.display = "none";
+
             }}
           >
             Close
@@ -133,7 +137,8 @@ const navigate=useNavigate()
                 className={styles.editbtn}
                 onClick={() => {
 
-                  document.querySelector("#popup").style.display = "block";
+                  document.querySelector("#popup").style.display = "flex";
+                  // document.querySelector("#popup").style.display = "flex";
                 }}
               >
                 SignIn
@@ -158,8 +163,8 @@ const navigate=useNavigate()
 
 
 
-        <Box id="popups" className={styles.popup}>
-        <Heading>Login Here</Heading>
+        <Box id="popups" className={styles.popup} flexDirection="column" justifyContent={"center"} alignItems="center" gap="1rem">
+        <Heading color={"#ea4c89"}>Login Here</Heading>
           <Input
            onChange={(e)=>setadminEmail(e.target.value)}
             placeholder="Enter Email"
@@ -203,9 +208,10 @@ const navigate=useNavigate()
         <Box className={styles.user}>
           <Text>
             <Button
-              className={styles.editbtn}
+            colorScheme={"pink"}
+              className={styles.editbtnadmin}
               onClick={() => {
-                document.querySelector("#popups").style.display = "block";
+                document.querySelector("#popups").style.display = "flex";
               }}
             >
               ADMIN

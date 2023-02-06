@@ -1,0 +1,27 @@
+.agency{
+height: 15rem;
+width: 90%;
+/* border: 1px solid red; */
+margin: auto;
+margin-top: 2rem;
+
+}
+.agencyimg{
+    border-radius: 50%;
+}
+
+.agencytext{
+    color: #0D0C22;
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.website{
+    color: #6E6D7A;
+    font-size: 17px;
+    margin-top: 0.5rem;
+}
+.hire{
+    padding: 1rem;
+    margin-top: 1rem;
+}

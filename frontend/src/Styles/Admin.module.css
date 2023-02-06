@@ -221,6 +221,14 @@ padding-top: 3rem;
     margin-left: 20rem;
    /* border: 1px solid red; */
 margin: auto;
+align-items: center;
+}
+.eachiconbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 .facebookiconimage{
     height: 4rem;
@@ -272,8 +280,8 @@ font-weight: bolder;
 
 .editbtn{
     padding: 1rem ;
-    color: #0D0C22;
-    border: 5px solid teal;
+    /* color: #0D0C22; */
+    /* border: 5px solid teal; */
     position: relative;
     /* z-index: 2; */
    
@@ -300,7 +308,7 @@ font-weight: bolder;
 
   .userdetail{
     color: #ea4c89;
-    font-size: 15px;
+    font-size: 20px;
   }
   .useremail{
     color: #ea4c89;

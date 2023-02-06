@@ -124,13 +124,13 @@ const Admin = () => {
           <Text>Seekret API Platform Landing page</Text>
           <Text>
            <span className={styles.userdetail}>{userdetails.name}</span> 🎯 for Troikagency - UX/UI Design
-            Agency•Follow•Hire Us
+            Agency  •  Follow  •  Hire Us
           </Text>
         </Box>
         <Box className={styles.buttonbox}>
           <Button>Save</Button>
-          <Button>
-            <i class="fa-regular fa-heart"></i>Like
+          <Button ml="1rem"  colorScheme={"pink"} color="white">
+            <i class="fa-regular fa-heart"></i> Like
           </Button>
         </Box>
       </Box>
@@ -142,6 +142,7 @@ const Admin = () => {
           src={contents.firstImage}
         />
         <Button
+        colorScheme={"pink"}
           className={styles.editbtn}
           onClick={() => {
             document.querySelector("#popup").style.display = "block";
@@ -183,6 +184,8 @@ const Admin = () => {
         <Text>
           {contents.heyguys_content}
           <Button
+          colorScheme={"pink"}
+         
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popupheyguys").style.display = "block";
@@ -224,6 +227,7 @@ const Admin = () => {
         <Text>
           {contents.weare_content}
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popupweare").style.display = "block";
@@ -272,6 +276,7 @@ const Admin = () => {
         <Image className={styles.missionimg} src={contents.secondImage} />
 
         <Button
+        colorScheme={"pink"}
           className={styles.editbtn}
           onClick={() => {
             document.querySelector("#popupsecondimage").style.display = "block";
@@ -318,6 +323,7 @@ const Admin = () => {
           />
 
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popupsolutionimage").style.display =
@@ -361,6 +367,7 @@ const Admin = () => {
             <Text>
               {contents.solution_content}
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector("#popupsolution").style.display =
@@ -427,6 +434,7 @@ const Admin = () => {
         <Text className={styles.apitext}>
           {contents.apiDevelopment_content}
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popapidev").style.display = "block";
@@ -466,6 +474,7 @@ const Admin = () => {
         <Box className={styles.apitexts}>
           {contents.apiApproach_content}
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popapiappr").style.display = "block";
@@ -510,6 +519,7 @@ const Admin = () => {
           <Box className={styles.tooboximg}>
             <Image className={styles.tooimg} src={contents.toomanyimage} />
             <Button
+            colorScheme={"pink"}
               className={styles.editbtn}
               onClick={() => {
                 document.querySelector("#popuptoomanyimage").style.display =
@@ -551,6 +561,7 @@ const Admin = () => {
               {contents.toomanycontent}
 
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector("#popmanycontent").style.display =
@@ -591,6 +602,7 @@ const Admin = () => {
             <Text className={styles.tootexts}>
               {contents.toomanysmallcontent}
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector("#popmanysmallcontent").style.display =
@@ -637,6 +649,7 @@ const Admin = () => {
             <Image className={styles.tooimg} src={contents.diminishingImage} />
 
             <Button
+            colorScheme={"pink"}
               className={styles.editbtn}
               onClick={() => {
                 document.querySelector("#popupdimishimage").style.display =
@@ -678,6 +691,7 @@ const Admin = () => {
               {contents.diminishingContent}
 
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector("#popdimishcontent").style.display =
@@ -719,6 +733,7 @@ const Admin = () => {
               {contents.diminishingsmallcontent}
 
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector(
@@ -767,6 +782,7 @@ const Admin = () => {
             <Image className={styles.tooimg} src={contents.changeImage} />
 
             <Button
+            colorScheme={"pink"}
               className={styles.editbtn}
               onClick={() => {
                 document.querySelector("#popchangeimage").style.display =
@@ -808,6 +824,7 @@ const Admin = () => {
             <Text className={styles.tootext}>
               {contents.changeContent}
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector("#popchangecontent").style.display =
@@ -849,6 +866,7 @@ const Admin = () => {
             <Text className={styles.tootexts}>
               {contents.changesmallcontent}
               <Button
+              colorScheme={"pink"}
                 className={styles.editbtn}
                 onClick={() => {
                   document.querySelector(
@@ -926,12 +944,14 @@ const Admin = () => {
       </Box>
 
       <Box className={styles.iconbox}>
-        <Box>
+        <Box className={styles.eachiconbox}>
           <Image
+         
             className={styles.facebookiconimage}
             src="https://play-lh.googleusercontent.com/5pZMqQYClc5McEjaISPkvhF8pDmlbLqraTMwk1eeqTlnUSjVxPCq-MItIrJPJGe7xW4"
           />
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popfacebookimage").style.display =
@@ -968,6 +988,7 @@ const Admin = () => {
                 Close
               </Button>
             </Box>
+
           </Center>
         </Box>
         <Box>
@@ -976,6 +997,7 @@ const Admin = () => {
             src="data:image/jpeg;base64,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"
           />
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#poptweeterimage").style.display =
@@ -1022,6 +1044,7 @@ const Admin = () => {
             src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266__340.jpg"
           />
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#popinstaimage").style.display = "block";
@@ -1061,11 +1084,13 @@ const Admin = () => {
         </Box>
         <Box>
           <Image
+          borderRadius={"50%"} backgroundColor="white"
             className={styles.facebookiconimage}
-            src="https://play-lh.googleusercontent.com/dVsv8Hc4TOUeLFAahxR8KANg22W9dj2jBsTW1VHv3CV-5NCZjP9D9i2j5IpfVx2NTB8=w600-h300-pc0xffffff-pd"
+            src="https://www.iconpacks.net/icons/1/free-pinterest-icon-131-thumb.png"
           />
 
           <Button
+          colorScheme={"pink"}
             className={styles.editbtn}
             onClick={() => {
               document.querySelector("#poppinterestimage").style.display =
@@ -1136,7 +1161,7 @@ const Admin = () => {
               doc.text(
                 50,
                 10 + i * 10,
-                "Name : " + el.name + "   Contact Number : " + el.contact
+                "Name : " + el.name + ",   Contact Number : " + el.contact
               );
             });
             doc.save("Converted PDF");

@@ -5,10 +5,10 @@
     background-color: #0D0C22;
     color: aliceblue;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 height: 3rem;
 align-items: center;
-
+padding: 0 1rem 0 25rem;
 
 }
 .profile{
@@ -34,18 +34,19 @@ align-items: center;
 }
 .userdetail{
     color: #ea4c89;
-    font-size: 15px;
+    font-size: 20px;
   }
 .dribble{
     height: auto;
     width: 130px;
     color: #0D0C22;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     /* border: 1px solid green; */
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: cursive;
 }
 
 .Inspiration{

@@ -1,25 +1,37 @@
 .container{
     height: 22rem;
     width: 50%;
-    border: 10px solid teal;
+    /* border: 10px solid teal; */
     border-radius: 5px;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     padding-left: 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+background-color: antiquewhite;
+
+}
+.main{
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .admin{
-    height: 15rem;
+    height: 20rem;
     width: 100%;
     /* border: 5px solid #0D0C22; */
     border-radius: 50%;
     font-size: 25px;
+    /* border: 1px solid red; */
 }
 .user{
  
-        height: 15rem;
+        height: 20rem;
         width: 100%;
         /* border: 5px solid #0D0C22; */
         border-radius: 50%;
@@ -33,18 +45,29 @@
 }
 
 .userimg{
-    height: 14rem;
-    width: 15rem;
-    border-radius: 10px;
-}
+    height: 15rem;
+    width: 16rem;
+    border-radius: 50%;
+    margin-left: 5rem;
 
+}
+.userimgs{
+    height: 15rem;
+    width: 24rem;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
 .editbtn{
     padding: 1rem ;
     color: #0D0C22;
-    border: 5px solid teal;
+    /* border: 5px solid teal; */
     position: relative;
     /* z-index: 1; */
    
+}
+.editbtnadmin
+{
+    margin-left: 5rem;
 }
 .popup {
     display: none;
@@ -52,6 +75,13 @@
     width: 300px;
     height: 300px;
     background-color: white;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     z-index: 1;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
