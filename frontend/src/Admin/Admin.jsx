@@ -1155,6 +1155,8 @@ const Admin = () => {
         </TableContainer>
 
         <Button
+        colorScheme={"pink"}
+
           onClick={() => {
             let doc = new jsPDF();
             leads.forEach((el, i) => {
@@ -1189,7 +1191,9 @@ const Admin = () => {
                     <Td>{el.name}</Td>
                     <Td> {el.email}</Td>
                     <Td>
-                      <Button onClick={() => handleAdmin(el.email)}>
+                      <Button 
+                            colorScheme={"pink"}
+                      onClick={() => handleAdmin(el.email)}>
                         Add as Admin
                       </Button>
                     </Td>

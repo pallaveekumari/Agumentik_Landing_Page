@@ -14,6 +14,23 @@ const Footer = () => {
 colorScheme={"pink"}
 color="white"><i class="fa-solid fa-envelope"></i> Hire Us</Button>
     </Box>
+    <Box className={styles.moreby}>
+<Text className={styles.agencytextmore} >More by Troikagency - UX/UI Design Agency</Text>
+<Box className={styles.casestudy}>
+  <Box className={styles.casestudybox}>
+    <Image className={styles.casestudyboximg} src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"/>
+  </Box>
+  <Box className={styles.casestudybox}>
+  <Image className={styles.casestudyboximg} src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"/>
+  </Box>
+  <Box className={styles.casestudybox}>
+  <Image className={styles.casestudyboximg} src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"/>
+  </Box>
+  <Box className={styles.casestudybox}>
+  <Image className={styles.casestudyboximg} src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928__480.jpg"/>
+  </Box>
+</Box>
+    </Box>
     </Box>
   )
 }

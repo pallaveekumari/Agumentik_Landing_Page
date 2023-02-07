@@ -25,3 +25,38 @@ margin-top: 2rem;
     padding: 1rem;
     margin-top: 1rem;
 }
+.moreby{
+    height: 20rem;
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: auto;
+    
+}
+.casestudy{
+    height: 20rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.casestudybox{
+    height: 15rem;
+    width: 95%;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    /* padding-left: 1rem; */
+}
+.casestudyboximg{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+.agencytextmore{
+    color: #0D0C22;
+    font-size: 21px;
+    font-weight: bolder;
+margin-right: 45rem;
+}
