@@ -33,7 +33,6 @@ Hello Everyone !🌏 I am Pallavee Kumari and I am presenting my individual proj
 - I learn about many new things.
 - I learned how to plan a project and execute that in a limited time frame.
 
-
 ### Netlify Link:https://aumntik.netlify.app/
 
 ### Github Link:https://github.com/pallaveekumari/Agumentik_Landing_Page
