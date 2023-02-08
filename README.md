@@ -1,6 +1,6 @@
 # dribble
 
-Hello Everyone !🌏 I am Pallavee Kumari and I am presenting my individual project Clone of BellavitaOrganic.
+Hello Everyone !🌏 I am Pallavee Kumari and I am presenting my individual project of dribble.
 
 
 ## Details : 🔭
